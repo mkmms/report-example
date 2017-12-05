@@ -1,0 +1,10 @@
+<div id="reports-table"></div>
+
+<script>
+	$.ajax({ 
+		url: "http://localhost:3000/users.json",
+		success: function(res){
+			$("#reports-table").html( HandlebarsTemplates.reports({users:res}) )
+		}
+	})	
+</script>

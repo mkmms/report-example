@@ -1,0 +1,10 @@
+<div id="reports-table"></div>
+
+<script>
+	$.ajax({ 
+		url: "/users/indexjs",
+		success: function(res){
+			$("#reports-table").html(res)
+		}
+	})
+</script>

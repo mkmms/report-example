@@ -1,0 +1,12 @@
+<div id="reports-table"></div>
+
+<script>
+	$.ajax({ 
+		url: "/users.json",
+		success: function(res){
+			console.log("data fetched");
+			data = res
+			projector.append($("#reports-table")[0], render);
+		}
+	})	
+</script>

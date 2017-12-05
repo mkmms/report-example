@@ -1,0 +1,38 @@
+<table>
+	<thead>
+		<tr>
+			<th>Email</th>
+      <th>Password</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Gender</th>
+      <th>Phone</th>
+      <th>Address line1</th>
+      <th>Address line2</th>
+      <th>State</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Status</th>
+      <th>Marital status</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each users}}
+			<tr>
+				<td>{{email}}</td>
+        <td>{{password}}</td>
+        <td>{{first_name}}</td>
+        <td>{{last_name}}</td>
+        <td>{{gender}}</td>
+        <td>{{phone}}</td>
+        <td>{{address_line1}}</td>
+        <td>{{address_line2}}</td>
+        <td>{{state}}</td>
+        <td>{{city}}</td>
+        <td>{{country}}</td>
+        <td>{{status}}</td>
+        <td>{{marital_status}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
