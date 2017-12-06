@@ -1,0 +1,59 @@
+<button id="csv" class="btn-primary btn">CSV</button>
+<button id="pdf" class="btn-primary btn">PDF</button>
+
+<div id="reports-table"></div>
+<div id="pdfrenderer" style='display: none;'></div>
+
+<script>
+	$("#reports-table").tabulator({
+		height:"500px",
+    columns:[
+    	{ title: 'id', field: 'id' },
+      {title: 'Email', field: 'email'},
+			{title: 'Password', field: 'password'},
+			{title: 'First name', field: 'first_name'},
+			{title: 'Last name', field: 'last_name'},
+			{title: 'Gender', field: 'gender'},
+			{title: 'Phone', field: 'phone'},
+			{title: 'Address line1', field: 'address_line1'},
+			{title: 'Address line2', field: 'address_line2'},
+			{title: 'State', field: 'state'},
+			{title: 'City', field: 'city'},
+			{title: 'Country', field: 'country'},
+			{title: 'Status', field: 'status'},
+			{title: 'Marital status', field: 'marital_status'}
+    ]
+	})
+	$("#reports-table").tabulator('setData', '/users.json');
+
+	$("#csv").click(function(event) {
+		$("#reports-table").tabulator("download", "csv", "users.csv");
+	});
+
+	$("#pdf").click(function(event) {
+		$("#pdfrenderer")
+			.empty()
+			.append(
+				$("#reports-table").tabulator("getHtml", "true")
+			);
+
+		 	$('#pdfrenderer>table').attr("id", "table");
+	    var elem = $("#table")[0];
+	    var doc = new jsPDF('l', 'pt'); 
+	    var res = doc.autoTableHtmlToJson(elem);
+	    doc.autoTable(res.columns, res.data, { 
+	    	startY: 10,
+      	width:10
+	    })
+	    doc.setFontSize(5);
+	    doc.save('user-reports.pdf');
+	});
+
+</script>
+
+
+<style>
+	body{
+		overflow: visible;
+	}
+</style>

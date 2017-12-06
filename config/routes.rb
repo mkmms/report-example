@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   		get :indexjs
   		get :only_js
   		get :maq
+      get :tabulator
+      get :index_action
   	end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  # root to: "home#index"
+  root to: "users#index_action"
 end

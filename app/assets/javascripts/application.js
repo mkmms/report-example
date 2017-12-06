@@ -12,6 +12,9 @@
 //
 //= require rails-ujs
 // require turbolinks
+//= require jquery
+//= require jquery-ui
+//= require tabulator
 //= require handlebars.runtime
 //= require_tree ./templates
 //= require_tree .

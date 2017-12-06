@@ -8,6 +8,13 @@ class UsersController < ApplicationController
     render json: @users.to_json
   end
 
+  def tabulator
+    
+  end
+
+  def index_action
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show
